@@ -1,0 +1,115 @@
+* {
+   box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   font-family: 'Karla', sans-serif;
+}
+:root {
+   /* Primary */ 
+   --cyan: hsl(179, 62%, 43%);
+   --bright-yellow: hsl(71, 73%, 54%);
+   /* Neutral */
+   --light-gray: hsl(204, 43%, 93%);
+   --grayish-blue: hsl(218, 22%, 67%);
+}
+@media (min-width: 1200px) {
+   .container {
+      width: 720px;
+      height: 400px;
+      margin: 80px auto;
+   }
+   .container div {
+      padding: 40px;
+   }
+}
+@media (max-width: 767px) {
+   .container > div {
+      padding: 10px;
+   }
+}
+.container {
+   display: grid;
+   grid-template-columns: repeat(2, 1fr);
+   grid-template-rows: repeat(2, 1fr);
+   grid-template-areas: "up up" "two three";
+   border-radius: 10px;
+   box-shadow: 0 0 20px 0 #CCC;
+}
+@media (max-width: 767px) {
+   .container {
+      display: flex;
+      flex-direction: column;
+      width: 90%;
+      margin: 100px auto;
+   }
+   .container > div:first-child {
+      padding: 25px;
+   }
+   .container > div {
+      padding: 40px;
+   }
+}
+.container div:first-child {
+   grid-area: up;
+}
+@media (min-width: 1200px) {
+   .container div:first-child {
+      padding-right: 100px;
+   }
+}
+.container div:first-child h1 {
+   color: var(--cyan);
+}
+.container div:first-child h2 {
+   color: var(--bright-yellow);
+   margin: 20px 0;
+}
+.container div:first-child p {
+   color: var(--grayish-blue);
+   line-height: 1.7;
+}
+.container div:nth-child(2) {
+   grid-area: two;
+   background-color: var(--cyan);
+}
+.container div:nth-child(2) .text {
+   display: flex;
+   align-items: center;
+   padding: 10px 0 10px;
+}
+.container div:nth-child(2) .text span {
+   font-size: 38px;
+   color: var(--light-gray);
+   margin-right: 6px;
+}
+.container div:nth-child(2) .text p {
+   color: var(--light-gray);
+   opacity: 0.6;
+}
+.container div:nth-child(2) .p {
+   color: var(--light-gray);
+   margin-bottom: 20px;
+}
+.container div:nth-child(2) button{
+   color: white;
+   background-color: var(--bright-yellow);
+   padding: 15px 0;
+   width: 100%;
+   outline: none;
+   border: none;
+   border-radius: 5px;
+   box-shadow: 0 0 8px 0 rgb(104, 103, 103);
+}
+.container div:nth-child(3) {
+   grid-area: three;
+   background-color: hsl(179, 62%, 46%);
+}
+.container div:nth-child(3) p {
+   color: var(--light-gray);
+   margin-top: 20px;
+   line-height: 1.5;
+}
+.container div:nth-child(2) h2,
+.container div:nth-child(3) h2 {
+   color: var(--light-gray);
+}
